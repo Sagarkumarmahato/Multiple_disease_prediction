@@ -21,21 +21,17 @@ st.set_page_config(page_title="Healthcare Data Analytics for Disease Trend Analy
 # getting the working directory of the main.py
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-# loading the saved models
-
 diabetes_model = pickle.load(
-    open(f"{working_dir}/diabetes_model.sav", "rb")
+    open(os.path.join(working_dir, "diabetes_model.sav"), "rb")
 )
 
 heart_disease_model = pickle.load(
-    open(f'{working_dir}/heart_disease_model.sav', 'rb')
+    open(os.path.join(working_dir, "heart_disease_model.sav"), "rb")
 )
-
 
 parkinsons_model = pickle.load(
-    open(f"{working_dir}/parkinsons_model.sav", "rb")
+    open(os.path.join(working_dir, "parkinsons_model.sav"), "rb")
 )
-
 # sidebar for navigation
 with st.sidebar:
     st.title("🧑‍⚕️ Disease Prediction System")
