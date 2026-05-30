@@ -7,7 +7,7 @@ Created on Sat May 30 12:14:59 2026
 import os
 import pickle
 import streamlit as st
-from streamlit_option_menu import option_menu
+
 
 
 
@@ -37,14 +37,16 @@ parkinsons_model = pickle.load(
 
 # sidebar for navigation
 with st.sidebar:
-    selected = option_menu('Multiple Disease Prediction System',
+    st.title("🧑‍⚕️ Disease Prediction System")
 
-                           ['Diabetes Prediction',
-                            'Heart Disease Prediction',
-                            'Parkinsons Prediction'],
-                           menu_icon='hospital-fill',
-                           icons=['activity', 'heart', 'person'],
-                           default_index=0)
+    selected = st.radio(
+        "Select Prediction",
+        [
+            "Diabetes Prediction",
+            "Heart Disease Prediction",
+            "Parkinsons Prediction"
+        ]
+    )
 
 # Diabetes Prediction Page
 if selected == 'Diabetes Prediction':
