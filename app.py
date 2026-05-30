@@ -7,6 +7,7 @@ Created on Sat May 30 12:14:59 2026
 import os
 import pickle
 import streamlit as st
+from streamlit_option_menu import option_menu
 
 
 
